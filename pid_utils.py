@@ -1,5 +1,4 @@
-__version__ 'v01 2018-03-04' # spring-system using TF, pid_spring_mass 
-accepts mbk 0,0,k and pid 0,i,0
+__version__ = 'v01 2018-03-04' # spring-system using TF, pid_spring_mass accepts mbk 0,0,k and pid 0,i,0
 
 import numpy as np
 from scipy import signal
