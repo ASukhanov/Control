@@ -45,4 +45,13 @@ def pid_spring_mass(mbk,pid):
     print('controller:'+controller_type+', zeros,poles,gain:\n '+str(signal.tf2zpk(num,den)))
     return signal.lti(num,den)
 
+def poles2pid(mbk,p):
+    '''Calculates pid parameters from poles (p) of a second order system (mbk)'''
+    m,b,k = mbk
+    kD = -sum(p)*m - b
+    kI = -m*p[0]*p[1]*p[2]
+    kP = m*(p[0]*p[1]+p[0]*p[2]+p[1]*p[2]) - k
+    return kP,kI,kD
+
+
 
